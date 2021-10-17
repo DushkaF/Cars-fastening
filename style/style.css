@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  -webkit-appearance: none;
+}
+
+body {
+  font-family: monospace, monospace;
+  -webkit-appearance: none;
+  margin: 0;
+  height: 100%;
+  background: #09192f;
+  color: #0ee6b0;
+}
+
+#wrapper {
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 85%;
+}
+
+.input-form{
+  background-color: #4C4098 !important;
+  border-color: #0ee6b0;
+  color: #cca362 !important ;
+}
+
+.input-form::placeholder{
+  color: #cca362 !important ;
+}
