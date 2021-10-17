@@ -86,26 +86,30 @@ function calc() {
   if (way != "undefined" && parseInt(cars.value) != NaN) {
     axles.value = parseInt(cars.value) * 4;
     axles_value = parseInt(axles.value);
-    axles_points = Object.keys(DB[way][7][formula])
+    
+
+    near_value = [undefined, undefined];
+    
+    for (let post = 0; post < 2; post++) {
+      var axles_points = Object.keys(DB[way][7+post][formula])
       .map(function (x) {
         return parseInt(x, 10);
       })
-    axles_points = axles_points.sort(function(a,b){return a-b})
+      axles_points = axles_points.sort(function(a,b){return a-b})
 
-    near_value = undefined;
-
-    for (let i = 0; i < axles_points.length; i++) {
-      if (axles_points[i] >= axles_value) {
-        near_value = axles_points[i];
-        break;
+      for (let i = 0; i < axles_points.length; i++) {
+        if (axles_points[i] >= axles_value) {
+          near_value[post] = axles_points[i];
+          break;
+        }
       }
     }
+    
 
-    console.log("near", near_value, axles_points);
+    console.log("near", near_value);
 
-    o_count = near_value != undefined ? DB[way][7][formula][near_value] : 'err';
-    h_count = DB[way][8][formula][near_value];
-    h_count = near_value != undefined ? h_count == undefined ? 0 : h_count  : 'err';
+    o_count = near_value != undefined ? DB[way][7][formula][near_value[0]] : 'err';
+    h_count = near_value != undefined ? DB[way][8][formula][near_value[1]] : 'err';
     a_count = near_value != undefined ? o_count + h_count  : 'err';
     console.log(o_count, h_count);
     all_count.value = a_count;
