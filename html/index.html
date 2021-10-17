@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+    <script lang="javascript" src="dist/xlsx.full.min.js"></script>
+    <title>Hello, world!</title>
+
+    <script src="../js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+</head>
+
+<body>
+    <div class="
+        container
+        h-100
+        d-flex
+        flex-column
+        justify-content-center
+        align-items-center
+      ">
+        <div id="wrap" class="container">
+            <h2 class="text-center">Расчёт закрепления подвижного состава</h2>
+            <div>
+                <div class="row p-3">
+                    <div class="col d-flex align-items-center">
+                        <select id="way" class="form-select-sm input-form" aria-label="Default select example">
+                            <option selected value=undefined>Путь</option>
+                        </select>
+                    </div>
+                    <div class="col d-flex justify-content-between align-items-center">
+                        <p>Формула закрепеления:</p>
+                        <div class="d-flex flex-column" id="formula">
+                            <div class="form-check">
+                                <input class="form-check-input input-form" type="radio" name="radioForm" id="form1"
+                                    checked />
+                                <label class="form-check-label" for="form1"> №1 </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input input-form" type="radio" name="radioForm" id="form2" />
+                                <label class="form-check-label" for="form2"> №2 </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col">
+                        <p>Количество вагонов</p>
+                    </div>
+                    <div class="col">
+                        <input id='cars' class="form-control form-control-sm input-form" type="text" placeholder="Количество"
+                            aria-label=".form-control-sm example">
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col">
+                        <p>Количество осей</p>
+                    </div>
+                    <div class="col">
+                        <input id='axles' class="form-control form-control-sm input-form" type="text" placeholder="Количество"
+                            aria-label=".form-control-sm example">
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col">
+                        <p>Количество Т/Б</p>
+                    </div>
+                    <div class="col">
+                        <input id='all-count' class="form-control form-control-sm input-form" type="text" value="..."
+                            aria-label="" disabled readonly>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col">
+                        <p>Пост №8</p>
+                    </div>
+                    <div class="col">
+                        <input id='honest-count' class="form-control form-control-sm input-form" type="text" value="..."
+                            aria-label="" disabled readonly>
+                    </div>
+                    <div class="col">
+                        <p>Пост №7</p>
+                    </div>
+                    <div class="col">
+                        <input id='odd-count' class="form-control form-control-sm input-form" type="text" value="..."
+                            aria-label="" disabled readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
